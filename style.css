@@ -1,0 +1,24 @@
+h3{
+    font-size: 30 !important;
+}
+
+.btn-info:hover{
+    background-color:black ;
+}
+
+canvas{
+    animation-name: filter;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    margin-top: 50px;
+}
+
+@keyframes filter{
+    from{
+        box-shadow:1px 1px 38px red; 
+    }
+
+    to{
+        box-shadow:1px 1px 38px orange; 
+    }
+}
