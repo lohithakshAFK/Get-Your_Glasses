@@ -1,5 +1,8 @@
-function preload(){
+right_eye_x = 0;
+right_eye_y = 0;
 
+function preload(){
+    img = loadImage("https://i.postimg.cc/kXTjV0Xn/trhrt-removebg-preview.png");
 }
 
 function setup(){
@@ -20,20 +23,17 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length > 0){
         console.log(results);
-        console.log("left eye x = " + results[0].pose.leftEye.x);
-        console.log("left eye y = " + results[0].pose.leftEye.y);
+        right_eye_x = results[0].pose.rightEye.x - 20;
+        right_eye_y = results[0].pose.rightEye.y - 20;
         console.log("right eye x = " + results[0].pose.rightEye.x);
         console.log("right eye y = " + results[0].pose.rightEye.y);
-        console.log("left ear x = " + results[0].pose.leftEar.x);
-        console.log("left ear y = " + results[0].pose.leftEar.y);
-        console.log("right ear x = " + results[0].pose.rightEar.x);
-        console.log("right ear x = " + results[0].pose.rightEar.y);
 
     }
 }
 
 function draw(){
      image(video,0,0,300,300);
+     image(img,right_eye_x,right_eye_y,70,50);
 }
 
 function snapshot(){
